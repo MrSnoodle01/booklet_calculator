@@ -23,7 +23,7 @@ document.getElementById('inputForm').addEventListener('submit', function (event)
     ${numberOfBookletPages > 48 ? "WARNING Thick booklets may not lay flat <br>" : ""}
     Total sheets: ${totalSheets} <br>
     Sheets per booklet: ${sheetsPerBooklet} <br>
-    ${numBlankPages > 0 ? "Blank pages added: ${numBlankPages} <br>" : ""} 
+    ${numBlankPages > 0 ? `Blank pages added: ${numBlankPages} <br>` : ""} 
     Size of sheet before folding: ${sheetSize}" x ${bookletHeight}" <br>
     `
 });
