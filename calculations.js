@@ -16,14 +16,14 @@ document.getElementById('inputForm').addEventListener('submit', function (event)
 
     const sheetsPerBooklet = Math.ceil(numberOfBookletPages / 4);
     const totalSheets = sheetsPerBooklet * numberOfBooklets;
-    const numBlankPages = numberOfBookletPages % 4;
+    const numBlankPages = 4 - (numberOfBookletPages % 4);
     const sheetSize = bookletWidth * 2;
 
     output.innerHTML = `
     ${numberOfBookletPages > 48 ? "WARNING Thick booklets may not lay flat <br>" : ""}
     Total sheets: ${totalSheets} <br>
     Sheets per booklet: ${sheetsPerBooklet} <br>` +
-        (numBlankPages > 0 ? "Blank pages added: " + numBlankPages + "<br>" : "") +
+        (numBlankPages > 0 && numBlankPages < 4 ? "Blank pages added: " + numBlankPages + "<br>" : "") +
         `Size of sheet before folding: ${sheetSize}" x ${bookletHeight}" <br>`
 
 });
