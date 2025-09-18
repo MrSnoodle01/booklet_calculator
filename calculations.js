@@ -9,8 +9,8 @@ document.getElementById('inputForm').addEventListener('submit', function (event)
 
     if (numberOfBookletPages == 0 || numberOfBooklets == 0 || bookletHeight == 0 || bookletWidth == 0) {
         output.innerHTML = "";
-        const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-        myModal.show();
+        const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+        errorModal.show();
         return;
     }
 
